@@ -1,0 +1,44 @@
+/* Login Page */
+.login--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login--form {
+  background-color: azure;
+  width: 40%;
+  height: 400px;
+  box-shadow: 1px 10px 30px 2px;
+  padding: 0 25px;
+  border-radius: 10px;
+}
+
+.login--form h2 {
+  padding: 25px 0;
+}
+
+.login--data {
+  margin-bottom: 25px;
+}
+
+.login--data label {
+  display: none;
+}
+
+.login--data input {
+  width: 100%;
+  padding: 5px 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+}
+
+.login--btn {
+  padding: 10px 40px;
+  cursor: pointer;
+  background-color: indigo;
+  outline: none;
+}
