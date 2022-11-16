@@ -8,13 +8,13 @@ const Sidebar = () => {
         Bluck
       </div>
       <div className='sidebar--profile'>
-        <div>
+        <div className='profile--intro'>
           Welcome Back...
         </div>
         <div>
           John Katua
         </div>
-        <div>
+        <div className='profile--email'>
           johnkatua99@gmail.com
         </div>
       </div>
