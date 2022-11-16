@@ -1,0 +1,9 @@
+.products--page {
+  background-color: brown;
+  height: 100%;
+}
+
+.products--page__header {
+  background-color: cadetblue;
+  height: 50px;
+}

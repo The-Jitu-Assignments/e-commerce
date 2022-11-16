@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './products.css'
 
 const Products = () => {
   return (
-    <div>Products</div>
+    <div className='products--page'>
+      <div className='products--page__header'>Header</div>
+      <div>
+        Main
+      </div>
+    </div>
   )
 }
 
