@@ -7,8 +7,14 @@ const Sidebar = () => {
       <div className='sidebar--header'>
         Bluck
       </div>
-      <div>
-        Profile
+      <div className='sidebar--profile'>
+        <div>
+          Welcome Back...
+        </div>
+        <div>Name</div>
+        <div>
+          Email Address
+        </div>
       </div>
       <div>
         Links
