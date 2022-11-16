@@ -12,11 +12,11 @@ const LoginPage = () => {
         </h2>
         <div className='login--data'>
           <label>Email:</label>
-          <input type="email" />
+          <input type="email" placeholder='enter your name' />
         </div>
         <div className='login--data'>
           <label>Password:</label>
-          <input  type="password" />
+          <input  type="password" placeholder='enter your password' />
         </div>
         <div className='auth--btn__container'>
           <button className='login--btn'>
