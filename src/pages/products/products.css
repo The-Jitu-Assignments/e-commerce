@@ -1,9 +1,12 @@
 .products--page {
-  background-color: brown;
   height: 100%;
 }
 
 .products--page__header {
-  background-color: cadetblue;
+  border-bottom: 1px solid var(--darkBlue);
   height: 50px;
+}
+
+.products--page__body {
+  height: calc(100% - 50px);
 }
