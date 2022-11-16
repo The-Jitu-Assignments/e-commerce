@@ -4,7 +4,11 @@ import './products.css'
 const Products = () => {
   return (
     <div className='products--page'>
-      <div className='products--page__header'>Header</div>
+      <div className='products--page__header'>
+        <button>
+          Add Product
+        </button>
+      </div>
       <div className='products--page__body'>
         Main
       </div>

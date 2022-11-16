@@ -3,6 +3,10 @@
 }
 
 .products--page__header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 20px;
   border-bottom: 1px solid var(--darkBlue);
   height: 50px;
 }
