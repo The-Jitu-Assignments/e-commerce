@@ -56,7 +56,12 @@ const Sidebar = () => {
           <ul>
             {iconData.map((item, i) => (
               <li key={i}>
-                {item.name}
+                <span>
+                  {item.icon}
+                </span>
+                <span>
+                  {item.name}
+                </span>
               </li>
             ))}
           </ul>

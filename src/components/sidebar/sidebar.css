@@ -43,3 +43,13 @@
 .sidebar--links__item {
   padding: 10px 20px;
 }
+
+.sidebar--links__item ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  gap: 12px;
+  list-style: none;
+  background-color: aqua;
+  margin: 5px 0;
+}
