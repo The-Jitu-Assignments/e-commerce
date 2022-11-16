@@ -35,13 +35,17 @@
 }
 
 .sidebar--links {
-  background-color: tomato;
   padding: 0 20px;
   margin: 20px 0;
 }
 
+.sidebar--links h3 {
+  color: var(--darkGreen);
+}
+
 .sidebar--links__item {
   padding: 10px 20px;
+  color: white;
 }
 
 .sidebar--links__item ul li {
@@ -57,5 +61,5 @@
 .sidebar--icons {
   display: flex;
   font-size: 1.2rem;
-  color: black;
+  color: white;
 }
