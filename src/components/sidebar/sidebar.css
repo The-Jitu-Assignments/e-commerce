@@ -50,6 +50,12 @@
   padding: 10px 0;
   gap: 12px;
   list-style: none;
-  background-color: aqua;
   margin: 5px 0;
+  cursor: pointer;
+}
+
+.sidebar--icons {
+  display: flex;
+  font-size: 1.2rem;
+  color: black;
 }

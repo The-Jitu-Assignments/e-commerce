@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './sidebar.css';
 import { BiHomeSmile, BiShoppingBag, BiLogOutCircle } from 'react-icons/bi';
 import { GrContact } from 'react-icons/gr';
@@ -34,6 +35,7 @@ const iconData = [
 ]
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
     <div className='sidebar'>
       <div className='sidebar--header'>
@@ -55,8 +57,8 @@ const Sidebar = () => {
         <div className='sidebar--links__item'>
           <ul>
             {iconData.map((item, i) => (
-              <li key={i}>
-                <span>
+              <li key={i} onClick={() => navigate(item.path)}>
+                <span className='sidebar--icons'>
                   {item.icon}
                 </span>
                 <span>
