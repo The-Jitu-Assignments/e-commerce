@@ -1,26 +1,21 @@
 .layout {
   display: flex;
-  background-color: aqua;
   min-height: 100vh;
   width: 100%;
 }
 
 .layout--left {
-  background-color: blue;
   width: 20%;
 }
 
 .layout--right {
-  background-color: brown;
   flex: 1;
 }
 
 .layout--right__top {
-  background-color: cadetblue;
   height: 50px;
 }
 
 .layout--right__bottom {
-  background-color: chocolate;
   height: calc(100vh - 50px);
 }

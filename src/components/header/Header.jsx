@@ -5,7 +5,7 @@ import './header.css'
 
 const iconStyles = {
   cursor: 'pointer',
-  color: 'white'
+  color: 'var(--darkBlue)'
 }
 
 const Header = () => {

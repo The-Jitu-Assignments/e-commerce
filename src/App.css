@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: bisque;
-}
-
 :root {
   --darkBlue: #2A0944;
   --darkGreen: #3FA796;
