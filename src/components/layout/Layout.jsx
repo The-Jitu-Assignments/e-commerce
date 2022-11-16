@@ -4,10 +4,10 @@ import './layout.css';
 const Layout = ({ children }) => {
   return (
     <div className='layout'>
-      <div>
+      <div className='layout--left'>
         A
       </div>
-      <div>
+      <div className='layout--right'>
         {children}
       </div>
     </div>
