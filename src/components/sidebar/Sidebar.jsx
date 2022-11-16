@@ -2,7 +2,17 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <div>
+      <div>
+        Header
+      </div>
+      <div>
+        Profile
+      </div>
+      <div>
+        Links
+      </div>
+    </div>
   )
 }
 
