@@ -1,10 +1,11 @@
 import React from 'react'
+import './sidebar.css'
 
 const Sidebar = () => {
   return (
-    <div>
-      <div>
-        Header
+    <div className='sidebar'>
+      <div className='sidebar--header'>
+        Bluck
       </div>
       <div>
         Profile
