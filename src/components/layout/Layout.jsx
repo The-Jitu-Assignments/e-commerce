@@ -8,7 +8,12 @@ const Layout = ({ children }) => {
         A
       </div>
       <div className='layout--right'>
-        {children}
+        <div className='layout--right__top'> 
+          Header
+        </div>
+        <div className='layout--right__bottom'>
+          {children}
+        </div>
       </div>
     </div>
   )
