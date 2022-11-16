@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
 import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
 import Products from "./pages/products/Products";
@@ -25,7 +26,11 @@ const AppRoutes = () => {
             <About />
           </Layout>
         } />
-      
+        <Route path="/contact" element={
+          <Layout>
+            <Contact />
+          </Layout>
+        } />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
