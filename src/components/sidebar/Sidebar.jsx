@@ -18,8 +18,15 @@ const Sidebar = () => {
           johnkatua99@gmail.com
         </div>
       </div>
-      <div>
-        Links
+      <div className='sidebar--links'>
+        <h3>Application</h3>
+        <div className='sidebar--links__item'>
+          <div>Home</div>
+          <div>Products</div>
+          <div>About</div>
+          <div>Contact</div>
+          <div>Logout</div>
+        </div>
       </div>
     </div>
   )
