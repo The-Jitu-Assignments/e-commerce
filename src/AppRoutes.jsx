@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+import About from "./pages/about/About";
 import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
 import Products from "./pages/products/Products";
@@ -19,6 +20,12 @@ const AppRoutes = () => {
             <Products />
           </Layout>
         } />
+        <Route path="/about" element={
+          <Layout>
+            <About />
+          </Layout>
+        } />
+      
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
