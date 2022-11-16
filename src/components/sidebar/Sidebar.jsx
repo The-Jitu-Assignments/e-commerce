@@ -1,5 +1,37 @@
 import React from 'react'
-import './sidebar.css'
+import './sidebar.css';
+import { BiHomeSmile, BiShoppingBag, BiLogOutCircle } from 'react-icons/bi';
+import { GrContact } from 'react-icons/gr';
+import { FcAbout } from 'react-icons/fc';
+
+
+const iconData = [
+  {
+    icon: <BiHomeSmile />,
+    name: 'Home',
+    path: '/'
+  },
+  {
+    icon: <BiShoppingBag />,
+    name: 'Products',
+    path: '/products'
+  },
+  {
+    icon: <FcAbout />,
+    name: 'About',
+    path: '/about'
+  },
+  {
+    icon: <GrContact />,
+    name: 'Contact Us',
+    path: '/contact'
+  },
+  {
+    icon: <BiLogOutCircle />,
+    name: 'Logout',
+    path: '/logout'
+  }
+]
 
 const Sidebar = () => {
   return (
@@ -21,11 +53,13 @@ const Sidebar = () => {
       <div className='sidebar--links'>
         <h3>Application</h3>
         <div className='sidebar--links__item'>
-          <div>Home</div>
-          <div>Products</div>
-          <div>About</div>
-          <div>Contact</div>
-          <div>Logout</div>
+          <ul>
+            {iconData.map((item, i) => (
+              <li key={i}>
+                {item.name}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
