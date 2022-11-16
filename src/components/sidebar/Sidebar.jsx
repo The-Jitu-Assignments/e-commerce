@@ -11,9 +11,11 @@ const Sidebar = () => {
         <div>
           Welcome Back...
         </div>
-        <div>Name</div>
         <div>
-          Email Address
+          John Katua
+        </div>
+        <div>
+          johnkatua99@gmail.com
         </div>
       </div>
       <div>
