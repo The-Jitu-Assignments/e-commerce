@@ -3,14 +3,19 @@ import { BsToggles } from 'react-icons/bs';
 import { TfiLayoutMenuV } from 'react-icons/tfi';
 import './header.css'
 
+const iconStyles = {
+  cursor: 'pointer',
+  color: 'white'
+}
+
 const Header = () => {
   return (
     <div className='header'>
       <div>
-        <TfiLayoutMenuV />
+        <TfiLayoutMenuV size={"1.5em"} style={iconStyles} />
       </div>
       <div>
-        <BsToggles />
+        <BsToggles size={"1.5em"}  style={iconStyles} />
       </div>
     </div>
   )
