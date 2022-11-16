@@ -1,9 +1,14 @@
 import React from 'react';
 import './modal.css';
 
-const Modal = () => {
+const Modal = ({ open }) => {
+  if (!open) return null;
   return (
-    <div className='overlay'>Modal</div>
+    <div className='overlay'>
+      <div className='modal--container'>
+        Modal Container
+      </div>
+    </div>
   )
 }
 
