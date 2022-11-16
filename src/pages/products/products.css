@@ -11,6 +11,16 @@
   height: 50px;
 }
 
+.add--product__btn {
+  background-color: var(--darkBlue);
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
 .products--page__body {
   height: calc(100% - 50px);
 }

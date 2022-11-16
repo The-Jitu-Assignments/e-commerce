@@ -5,7 +5,7 @@ const Products = () => {
   return (
     <div className='products--page'>
       <div className='products--page__header'>
-        <button>
+        <button className='add--product__btn'>
           Add Product
         </button>
       </div>
