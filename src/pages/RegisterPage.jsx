@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate()
   return (
     <div className='login--container'>
       <div className='login--form'>
@@ -23,7 +25,7 @@ const RegisterPage = () => {
           <button className='login--btn'>
             Register
           </button>
-          <span className='auth--link'>
+          <span className='auth--link' onClick={() => navigate('/login')}>
             Already have an account
           </span>
         </div>
