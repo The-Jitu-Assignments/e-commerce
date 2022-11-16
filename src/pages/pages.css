@@ -10,7 +10,7 @@
   background-color: azure;
   width: 40%;
   height: 400px;
-  box-shadow: 1px 10px 30px 2px;
+  box-shadow: 1px 1px 20px -2px indigo;
   padding: 0 25px;
   border-radius: 10px;
 }
@@ -45,4 +45,15 @@
   color: white;
   font-size: 16px;
   border-radius: 5px;
+}
+
+.auth--btn__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth--link {
+  cursor: pointer;
+  color: indigo;
 }
