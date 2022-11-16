@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../header/Header';
 import Sidebar from '../sidebar/Sidebar';
 import './layout.css';
 
@@ -10,7 +11,7 @@ const Layout = ({ children }) => {
       </div>
       <div className='layout--right'>
         <div className='layout--right__top'> 
-          Header
+          <Header />
         </div>
         <div className='layout--right__bottom'>
           {children}

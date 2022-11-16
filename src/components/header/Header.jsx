@@ -1,12 +1,17 @@
 import React from 'react'
 import { BsToggles } from 'react-icons/bs';
 import { TfiLayoutMenuV } from 'react-icons/tfi';
+import './header.css'
 
 const Header = () => {
   return (
-    <div>
-      <div>A</div>
-      <div>B</div>
+    <div className='header'>
+      <div>
+        <TfiLayoutMenuV />
+      </div>
+      <div>
+        <BsToggles />
+      </div>
     </div>
   )
 }
