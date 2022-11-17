@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsToggles } from 'react-icons/bs';
+import { BsCart } from 'react-icons/bs';
 import { TfiLayoutMenuV } from 'react-icons/tfi';
 import './header.css'
 
@@ -15,7 +15,7 @@ const Header = () => {
         <TfiLayoutMenuV size={"1.5em"} style={iconStyles} />
       </div>
       <div>
-        <BsToggles size={"1.5em"}  style={iconStyles} />
+        <BsCart size={"1.5em"}  style={iconStyles} />
       </div>
     </div>
   )
