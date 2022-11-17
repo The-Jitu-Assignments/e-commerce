@@ -19,6 +19,13 @@ export const createProduct = createAsyncThunk('product/createProduct',
       console.log(error)
     }
   }
+);
+
+export const fetchProducts = createAsyncThunk('product/fetchProducts',
+  async () => {
+    const res = await axios.get(url);
+    return res.data
+  }
 )
 
 export const productSlice = createSlice({

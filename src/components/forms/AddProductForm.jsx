@@ -22,7 +22,6 @@ const AddProductForm = ({ onClose }) => {
 
   const handleSubmit = () => {
     dispatch(createProduct(newProduct));
-    console.log(newProduct);
     onClose();
   }
   return (
