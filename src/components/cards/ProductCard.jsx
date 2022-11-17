@@ -1,10 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import './cards.css';
 
 const ProductCard = ({ data, selectItem }) => {
-  const  { cart } = useSelector(state => state.product);
-  console.log(cart);
   return (
     <div className='product--card'>
       <div className='product--card__top'>

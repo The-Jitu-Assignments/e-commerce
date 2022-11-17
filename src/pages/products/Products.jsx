@@ -9,7 +9,6 @@ const Products = () => {
   const { products } = useSelector(state => state.product);
   const [open, setIsOpen] = useState(false);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchProducts())
   }, []);
