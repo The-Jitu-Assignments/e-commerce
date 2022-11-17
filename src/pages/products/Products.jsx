@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 import Modal from '../../components/modal/Modal';
 import './products.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../features/products/productSlice';
+import { addToCart, fetchProducts } from '../../features/products/productSlice';
 import ProductCard from '../../components/cards/ProductCard';
 
 const Products = () => {
   const { products } = useSelector(state => state.product);
-  console.log(products);
   const [open, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts())
   }, []);
+
   return (
     <div className='products--page'>
       <div className='products--page__header'>
@@ -24,7 +24,7 @@ const Products = () => {
       </div>
       <div className='products--page__body'>
         {products?.map((data) => (
-          <ProductCard key={data.id} data={data} />
+          <ProductCard key={data.id} data={data} selectItem={() => dispatch(addToCart(data.id))} />
         ))}
       </div>
     </div>
