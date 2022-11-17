@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createProduct } from '../../features/products/productSlice';
+import { createProduct, fetchProducts } from '../../features/products/productSlice';
 import './forms.css';
 
 const AddProductForm = ({ onClose }) => {
@@ -23,6 +23,7 @@ const AddProductForm = ({ onClose }) => {
   const handleSubmit = () => {
     dispatch(createProduct(newProduct));
     onClose();
+    dispatch(fetchProducts());
   }
   return (
     <div className='add--product__form'>
