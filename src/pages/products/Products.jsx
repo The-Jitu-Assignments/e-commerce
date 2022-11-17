@@ -3,6 +3,7 @@ import Modal from '../../components/modal/Modal';
 import './products.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../features/products/productSlice';
+import ProductCard from '../../components/cards/ProductCard';
 
 const Products = () => {
   const { products } = useSelector(state => state.product);
@@ -22,19 +23,17 @@ const Products = () => {
         <Modal open={open} onClose={() => setIsOpen(false)} />
       </div>
       <div className='products--page__body'>
-        <div className="test--item">item1</div>
+        {products?.map((data) => (
+          <ProductCard data={data} />
+        ))}
+        {/* <div className="test--item">item1</div>
         <div className="test--item">item2</div>
         <div className="test--item">item3</div>
         <div className="test--item">item4</div>
         <div className="test--item">item5</div>
         <div className="test--item">item6</div>
         <div className="test--item">item7</div>
-        <div className="test--item">item8</div>
-        {/* <div>A</div>
-        <div>B</div>
-        <div>C</div>
-        <div>D</div>
-        <div>E</div> */}
+        <div className="test--item">item8</div> */}
       </div>
     </div>
   )

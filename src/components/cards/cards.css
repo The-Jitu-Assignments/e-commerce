@@ -1,0 +1,19 @@
+.product--card {
+  height: 350px;
+  background-color: blue;
+  border-radius: 5px;
+}
+
+.product--card__top {
+  height: 50%;
+  /* background-color: blueviolet; */
+}
+
+.product--card__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 50%;
+  padding: 10px;
+  background-color: brown;
+}
