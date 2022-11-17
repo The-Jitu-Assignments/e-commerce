@@ -1,7 +1,7 @@
-import React from 'react'
+import { useState } from 'react'
 import './forms.css';
 
-const AddProductForm = () => {
+const AddProductForm = ({ onClose }) => {
   return (
     <div className='add--product__form'>
       <div className='product--form__item'>
@@ -28,7 +28,7 @@ const AddProductForm = () => {
         </label>
         <input type="number" placeholder='enter the discount rate' />
       </div>
-      <button type="submit" className='product--submit__btn'>
+      <button type="submit" className='product--submit__btn' onClick={onClose} >
         Submit
       </button>
     </div>

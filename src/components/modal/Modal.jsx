@@ -12,7 +12,7 @@ const Modal = ({ open, onClose }) => {
           <div className="closeBtn" onClick={onClose}>X</div>
         </div>
         <div className="modal--body">
-          <AddProductForm />
+          <AddProductForm onClose={onClose} />
         </div>
       </div>
     </div>
