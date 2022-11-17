@@ -10,36 +10,74 @@ const AddProductForm = ({ onClose }) => {
     discountRate: ''
   })
 
-  const handleChange = () => {
-    console.log('working')
+  const handleChange = (e) => {
+    setNewProduct((newProduct) => ({
+      ...newProduct,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const handleSubmit = () => {
+    console.log(newProduct);
+    onClose();
   }
   return (
     <div className='add--product__form'>
       <div className='product--form__item'>
         <label>Name</label>
-        <input type="text" placeholder="enter product name" name='name' value={newProduct.name} onChange={handleChange} />
+        <input 
+          type="text" 
+          placeholder="enter product name" 
+          name='name' 
+          value={newProduct.name} 
+          onChange={handleChange} 
+        />
       </div>
       <div className='product--form__item'>
         <label>Image</label>
-        <input type="text" placeholder='enter an image url' />
+        <input 
+          type="text" 
+          placeholder='enter an image url' 
+          name='imageUrl'
+          value={newProduct.imageUrl}
+          onChange={handleChange}
+        />
       </div>
       <div className='product--form__item'>
         <label htmlFor="">Description</label>
-        <textarea type="text" placeholder='enter a short description for the product' />
+        <textarea 
+          type="text"  
+          placeholder='enter a short description for the product' 
+          name='description'
+          value={newProduct.description}
+          onChange={handleChange}
+        />
       </div>
       <div className='product--form__item'>
         <label htmlFor="">
           Price
         </label>
-        <input type="number" placeholder='enter product price' />
+        <input 
+          type="number" 
+          placeholder='enter product price'
+          name='price'
+          value={newProduct.price}
+          onChange={handleChange}
+        />
       </div>
       <div className='product--form__item'>
         <label htmlFor="">
           Discount Rate
         </label>
-        <input type="number" placeholder='enter the discount rate' />
+        <input 
+          type="number" 
+          placeholder='enter the discount rate' 
+          name='discountRate'
+          value={newProduct.discountRate}
+          onChange={handleChange}
+        />
       </div>
-      <button type="submit" className='product--submit__btn' onClick={onClose} >
+      <button type="submit" className='product--submit__btn' onClick={handleSubmit} >
         Submit
       </button>
     </div>
