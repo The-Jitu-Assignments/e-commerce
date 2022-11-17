@@ -1,0 +1,18 @@
+.cart--body {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  box-shadow: 10px 0px 10px 5px;
+}
+
+.cart--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: yellow;
+  height: 50px;
+  padding: 20px;
+}

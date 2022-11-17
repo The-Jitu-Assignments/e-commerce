@@ -8,6 +8,10 @@
   position: relative;
 }
 
+.header--cart {
+  cursor: pointer;
+}
+
 .cart--count {
   display: flex;
   align-items: center;
