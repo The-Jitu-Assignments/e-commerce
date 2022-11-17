@@ -24,16 +24,8 @@ const Products = () => {
       </div>
       <div className='products--page__body'>
         {products?.map((data) => (
-          <ProductCard data={data} />
+          <ProductCard key={data.id} data={data} />
         ))}
-        {/* <div className="test--item">item1</div>
-        <div className="test--item">item2</div>
-        <div className="test--item">item3</div>
-        <div className="test--item">item4</div>
-        <div className="test--item">item5</div>
-        <div className="test--item">item6</div>
-        <div className="test--item">item7</div>
-        <div className="test--item">item8</div> */}
       </div>
     </div>
   )
