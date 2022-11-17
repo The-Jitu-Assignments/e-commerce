@@ -7,10 +7,12 @@ const CartOverlay = ({ open, onClose }) => {
     <div className='overlay'>
       <div className='cart--body'>
         <div className='cart--header'>
-          <div>My products</div>
+          <h2>Your Items</h2>
           <div onClick={onClose} className='closeBtn'>x</div>
         </div>
-        Cart Products
+        <div className='cart--item__container'>
+          Hello
+        </div>
       </div>
     </div>
   )
