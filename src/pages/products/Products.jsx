@@ -10,7 +10,7 @@ const Products = () => {
         <button className='add--product__btn' onClick={() => setIsOpen(!open)}>
           Add Product
         </button>
-        <Modal open={open} />
+        <Modal open={open} onClose={() => setIsOpen(false)} />
       </div>
       <div className='products--page__body'>
         Main
