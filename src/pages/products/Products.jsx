@@ -22,7 +22,19 @@ const Products = () => {
         <Modal open={open} onClose={() => setIsOpen(false)} />
       </div>
       <div className='products--page__body'>
-        Main
+        <div className="test--item">item1</div>
+        <div className="test--item">item2</div>
+        <div className="test--item">item3</div>
+        <div className="test--item">item4</div>
+        <div className="test--item">item5</div>
+        <div className="test--item">item6</div>
+        <div className="test--item">item7</div>
+        <div className="test--item">item8</div>
+        {/* <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div> */}
       </div>
     </div>
   )
