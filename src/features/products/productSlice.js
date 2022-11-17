@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { validateProductSchema } from "../../helpers/validation";
 
 const initialState = {
   products: [],
@@ -9,6 +10,7 @@ const initialState = {
 export const createProduct = createAsyncThunk('product/createProduct',
   async (values) => {
     try {
+      await validateProductSchema(values)
       const res = await axios.post(url, values)
       return res.data
     } catch (error) {
@@ -24,6 +26,11 @@ export const productSlice = createSlice({
     addToCart: (state, action) => {
       state.cart = action.payload
     }
+  },
+  extraReducers(builder) {
+    builder.addCase(createProduct.fulfilled, (state, action) => {
+      state.products.push(action.payload);
+    })
   }
 })
 
