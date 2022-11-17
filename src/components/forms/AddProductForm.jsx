@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createProduct } from '../../features/products/productSlice';
 import './forms.css';
 
 const AddProductForm = ({ onClose }) => {
+  const dispatch = useDispatch();
   const [newProduct, setNewProduct] = useState({
     name: '',
     imageUrl: '',
@@ -18,6 +21,7 @@ const AddProductForm = ({ onClose }) => {
   }
 
   const handleSubmit = () => {
+    dispatch(createProduct(newProduct));
     console.log(newProduct);
     onClose();
   }
