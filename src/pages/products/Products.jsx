@@ -1,9 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '../../components/modal/Modal';
 import './products.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../features/products/productSlice';
 
 const Products = () => {
+  const { products } = useSelector(state => state.product);
+  console.log(products);
   const [open, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, []);
   return (
     <div className='products--page'>
       <div className='products--page__header'>

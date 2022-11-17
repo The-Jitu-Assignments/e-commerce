@@ -24,7 +24,19 @@ export const createProduct = createAsyncThunk('product/createProduct',
 export const fetchProducts = createAsyncThunk('product/fetchProducts',
   async () => {
     const res = await axios.get(url);
-    return res.data
+    let myData = [];
+    let fetchedData = res.data;
+    for (let key in fetchedData) {
+      myData.push({
+        id: key,
+        name: fetchedData[key].name,
+        description: fetchedData[key].description,
+        image: fetchedData[key].imageUrl,
+        price: fetchedData[key].price,
+        discount: fetchedData[key].discountRate
+      })
+    }
+    return myData
   }
 )
 
@@ -39,6 +51,9 @@ export const productSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(createProduct.fulfilled, (state, action) => {
       state.products.push(action.payload);
+    });
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      state.products = action.payload;
     })
   }
 })
