@@ -8,9 +8,21 @@ const ProductCard = ({ data }) => {
         <img src={data.image} alt="product--img" />
       </div>
       <div className='product--card__bottom'>
-        <div>A</div>
-        <div>B</div>
-        <div>C</div>
+        <div className='product--card__header'>
+          <div>{data.name}</div>
+          <div>Ksh.{data.price}</div>
+        </div>
+        <div className='product--description'>
+          {data.description}
+        </div>
+        <div className='product--card__header'>
+          <div className='product--rate'>
+            {data.discount}%
+          </div>
+          <div className='product--cart'>
+            Add to Cart
+          </div>
+        </div>
       </div>
     </div>
   )
