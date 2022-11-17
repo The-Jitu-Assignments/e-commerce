@@ -6,20 +6,9 @@ const url = 'https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/reac
 
 const initialState = {
   products: [],
-  cart: []
-};
+  cart: [],
 
-export const createProduct = createAsyncThunk('product/createProduct',
-  async (values) => {
-    try {
-      await validateProductSchema(values)
-      const res = await axios.post(url, values)
-      return res.data
-    } catch (error) {
-      console.log(error)
-    }
-  }
-);
+};
 
 export const fetchProducts = createAsyncThunk('product/fetchProducts',
   async () => {
@@ -39,6 +28,19 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts',
     return myData
   }
 )
+
+export const createProduct = createAsyncThunk('product/createProduct',
+  async (values) => {
+    try {
+      await validateProductSchema(values)
+      const res = await axios.post(url, values);
+      return res.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+);
+
 
 export const productSlice = createSlice({
   name: 'product',
