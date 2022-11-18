@@ -23,7 +23,7 @@ const Products = () => {
       </div>
       <div className='products--page__body'>
         {products?.map((data) => (
-          <ProductCard key={data.id} data={data} selectItem={() => dispatch(addToCart(data.id))} />
+          <ProductCard id={data.id} key={data.id} data={data} selectItem={() => dispatch(addToCart(data.id))} />
         ))}
       </div>
     </div>

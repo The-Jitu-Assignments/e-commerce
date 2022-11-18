@@ -1,4 +1,5 @@
 import React from 'react';
+import CartCard from '../cards/CartCard';
 import './cart.css'
 
 const CartOverlay = ({ open, onClose }) => {
@@ -11,7 +12,7 @@ const CartOverlay = ({ open, onClose }) => {
           <div onClick={onClose} className='closeBtn'>x</div>
         </div>
         <div className='cart--item__container'>
-          Hello
+          <CartCard />
         </div>
       </div>
     </div>

@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './cards.css';
 
-const ProductCard = ({ data, selectItem }) => {
+const ProductCard = ({ data, selectItem, id }) => {
+  const { cart } = useSelector((state) => state.product);
+  console.log('id', id)
   return (
     <div className='product--card'>
       <div className='product--card__top'>
@@ -19,9 +22,12 @@ const ProductCard = ({ data, selectItem }) => {
           <div className='product--rate'>
             {data.discount}%
           </div>
-          <div className='product--cart' onClick={selectItem}>
+          <button className='product--cart' onClick={selectItem} disabled={cart.some(cartItem => cartItem.id === id)}>
             Add to Cart
-          </div>
+          </button>
+          {/* <div className='product--cart' onClick={selectItem}>
+            Add to Cart
+          </div> */}
         </div>
       </div>
     </div>
