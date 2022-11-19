@@ -1,9 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
+import { increaseItemQuantity } from '../../../features/products/productSlice';
 
 const CartCard = () => {
+  const dispatch = useDispatch();
   const { cart } = useSelector(state => state.product);
   console.log(cart);
   if (!cart.length) return 'Your cart is empty';
@@ -23,7 +25,7 @@ const CartCard = () => {
             </div>
           </div>
           <div className='cart--card__icons'>
-            <div>
+            <div onClick={() => dispatch(increaseItemQuantity(item.id))}>
               <BiUpArrow />
             </div>
             <div>

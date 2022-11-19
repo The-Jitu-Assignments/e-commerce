@@ -13,6 +13,8 @@ const iconStyles = {
 const Header = () => {
   const [open, setIsOpen] = useState(false)
   const { cart } = useSelector((state) => state.product);
+
+  const cartTotal = cart.reduce((total, product) => total + product.count, 0);
   return (
     <div className='header'>
       <div>
@@ -21,7 +23,7 @@ const Header = () => {
       <div className='header--cart' onClick={() => setIsOpen(true)}>
         <BsCart size={"1.5em"}  style={iconStyles} />
         <span className='cart--count'>
-          {cart.length}
+          {cartTotal}
         </span>
       </div>
       <CartOverlay open={open} onClose={() => setIsOpen(false)} />
