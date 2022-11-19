@@ -1,5 +1,5 @@
 import React from 'react';
-import CartCard from '../cards/CartCard';
+import CartCard from '../cards/cartCard/CartCard';
 import './cart.css'
 
 const CartOverlay = ({ open, onClose }) => {
