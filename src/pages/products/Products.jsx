@@ -3,7 +3,7 @@ import Modal from '../../components/modal/Modal';
 import './products.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, fetchProducts } from '../../features/products/productSlice';
-import ProductCard from '../../components/cards/ProductCard';
+import ProductCard from '../../components/cards/productCard/ProductCard';
 
 const Products = () => {
   const { products } = useSelector(state => state.product);
