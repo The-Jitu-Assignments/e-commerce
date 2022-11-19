@@ -20,8 +20,10 @@ const AddProductForm = ({ onClose }) => {
     }))
   }
 
+  const { name, imageUrl, description, price, discountRate } = newProduct
+
   const handleSubmit = () => {
-    dispatch(createProduct(newProduct));
+    dispatch(createProduct({ name, imageUrl, description, price, discountRate, count: 0 }));
     onClose();
     dispatch(fetchProducts());
   }
