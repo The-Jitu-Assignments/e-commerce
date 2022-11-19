@@ -23,7 +23,7 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts',
         image: fetchedData[key].imageUrl,
         price: fetchedData[key].price,
         discount: fetchedData[key].discountRate,
-        count: fetchProducts[key].count
+        count: fetchedData[key].count
       })
     }
     return myData
@@ -56,7 +56,7 @@ export const productSlice = createSlice({
         return product
       })
       state.cart.push(selectedItem);
-      state.products = updatedProducts;
+      state.products = [...state.products, updatedProducts];
     }
   },
   extraReducers(builder) {
