@@ -66,6 +66,15 @@ export const productSlice = createSlice({
         return product
       })
       state.cart = updatedCart;
+    },
+    decreaseItemQuantity: (state, action) => {
+      const updatedCart = state.cart.map((product) => {
+        if (product.id === action.payload) {
+          product.count = product.count - 1;
+        }
+        return product
+      })
+      state.cart = updatedCart
     }
   },
   extraReducers(builder) {
@@ -78,6 +87,6 @@ export const productSlice = createSlice({
   }
 })
 
-export const { addToCart, increaseItemQuantity } = productSlice.actions;
+export const { addToCart, increaseItemQuantity, decreaseItemQuantity } = productSlice.actions;
 
 export default productSlice.reducer;
