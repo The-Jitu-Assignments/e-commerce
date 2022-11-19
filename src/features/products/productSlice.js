@@ -48,7 +48,14 @@ export const productSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       let selectedItem = state.products.find(item => item.id === action.payload);
+      const updatedProducts = state.products.map((product) => {
+        if (product.id === selectedItem.id) {
+          product.count = product.count + 1
+        }
+        return product
+      })
       state.cart.push(selectedItem);
+      state.products = updatedProducts;
     }
   },
   extraReducers(builder) {
