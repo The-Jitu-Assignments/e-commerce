@@ -22,9 +22,15 @@ const Products = () => {
         <Modal open={open} onClose={() => setIsOpen(false)} />
       </div>
       <div className='products--page__body'>
-        {products?.map((data) => (
-          <ProductCard id={data.id} key={data.id} data={data} selectItem={() => dispatch(addToCart(data.id))} />
-        ))}
+        {products.length ? 
+        (
+          <>
+          {products?.map((data) => (
+            <ProductCard id={data.id} key={data.id} data={data} selectItem={() => dispatch(addToCart(data.id))} />
+          ))}
+          </>
+        )  : (<div>We currently do not have any products</div>)
+        }
       </div>
     </div>
   )
