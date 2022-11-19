@@ -22,7 +22,8 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts',
         description: fetchedData[key].description,
         image: fetchedData[key].imageUrl,
         price: fetchedData[key].price,
-        discount: fetchedData[key].discountRate
+        discount: fetchedData[key].discountRate,
+        count: fetchProducts[key].count
       })
     }
     return myData
