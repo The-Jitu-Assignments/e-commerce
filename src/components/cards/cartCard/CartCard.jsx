@@ -5,6 +5,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 
 const CartCard = () => {
   const { cart } = useSelector(state => state.product);
+  console.log(cart);
   if (!cart.length) return 'Your cart is empty';
   return (
     <>

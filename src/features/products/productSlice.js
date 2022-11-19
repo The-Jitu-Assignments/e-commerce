@@ -7,7 +7,7 @@ const url = 'https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/reac
 const initialState = {
   products: [],
   cart: [],
-
+  message: ''
 };
 
 export const fetchProducts = createAsyncThunk('product/fetchProducts',
@@ -31,11 +31,11 @@ export const fetchProducts = createAsyncThunk('product/fetchProducts',
 )
 
 export const createProduct = createAsyncThunk('product/createProduct',
-  async (values) => {
+  async (values, { dispatch }) => {
     try {
       await validateProductSchema(values)
       const res = await axios.post(url, values);
-      return res.data
+      dispatch(fetchProducts())
     } catch (error) {
       console.log(error)
     }
@@ -61,7 +61,7 @@ export const productSlice = createSlice({
   },
   extraReducers(builder) {
     builder.addCase(createProduct.fulfilled, (state, action) => {
-      state.products.push(action.payload);
+      // state.products.push(action.payload);
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.products = action.payload;
