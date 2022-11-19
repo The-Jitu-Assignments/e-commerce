@@ -56,7 +56,7 @@ export const productSlice = createSlice({
         return product
       })
       state.cart.push(selectedItem);
-      state.products = [...state.products, updatedProducts];
+      state.products = updatedProducts;
     }
   },
   extraReducers(builder) {
