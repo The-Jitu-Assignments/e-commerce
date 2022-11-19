@@ -1,8 +1,9 @@
 .product--card {
   height: 350px;
-  background-color: var(--darkBlue);
+  /* background-color: var(--darkBlue); */
   border-radius: 5px;
-  color: white;
+  color: var(--darkBlue);
+  box-shadow: 0px 0px 40px -20px rgba(0,0,0,0.55);
 }
 
 .product--card__top {
@@ -55,8 +56,8 @@
   display: flex;
   height: 100px;
   gap: 10px;
-  background-color: chocolate;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 40px -20px rgba(0,0,0,0.55);
 }
 
 .cart--card__img {
@@ -72,7 +73,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: chartreuse;
   flex: 1;
 }
 
@@ -80,5 +80,4 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: crimson;
 }

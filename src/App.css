@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  color: #2A0944;
+}
+
 :root {
   --darkBlue: #2A0944;
   --darkGreen: #3FA796;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
-import { BiUpArrow } from 'react-icons/bi'
+import { BiUpArrow, BiDownArrow } from 'react-icons/bi';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const CartCard = () => {
   const { cart } = useSelector(state => state.product);
@@ -21,9 +22,15 @@ const CartCard = () => {
             </div>
           </div>
           <div className='cart--card__icons'>
-            <div>A</div>
-            <div>B</div>
-            <div>C</div>
+            <div>
+              <BiUpArrow />
+            </div>
+            <div>
+              <AiOutlineDelete />
+            </div>
+            <div>
+              <BiDownArrow />
+            </div>
           </div>
         </div>
       ))}
