@@ -27,10 +27,17 @@
 .product--card__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.product--name {
+  font-weight: bolder;
+  font-size: large;
 }
 
 .product--description {
   flex: 1;
+  color: rgba(46, 37, 37, 0.72);
 }
 
 .product--rate {

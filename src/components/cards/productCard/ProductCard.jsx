@@ -11,7 +11,7 @@ const ProductCard = ({ data, selectItem, id }) => {
       </div>
       <div className='product--card__bottom'>
         <div className='product--card__header'>
-          <div>{data.name}</div>
+          <div className='product--name'>{data.name}</div>
           <div>Ksh.{data.price}</div>
         </div>
         <div className='product--description'>

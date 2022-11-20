@@ -5,8 +5,8 @@ import './modal.css';
 const Modal = ({ open, onClose }) => {
   if (!open) return null;
   return (
-    <div className='overlay'>
-      <div className='modal--container'>
+    <div className='overlay' onClick={onClose}>
+      <div className='modal--container' onClick={(e) => e.stopPropagation()}>
         <div className='modal--header'>
           <h2>Create new product</h2>
           <div className="closeBtn" onClick={onClose}>X</div>
