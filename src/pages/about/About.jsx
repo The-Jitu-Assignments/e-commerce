@@ -8,7 +8,7 @@ const About = () => {
         <div className='about--details'>
           <h2>About us</h2>
           <p>
-            Bluck is an e-commerce start-up located in Kenya
+            Bluck is an e-commerce start-up located in Kenya.
           </p>
         </div>
         <div className='about--image'>
