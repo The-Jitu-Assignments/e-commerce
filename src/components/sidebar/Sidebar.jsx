@@ -47,7 +47,7 @@ const Sidebar = () => {
         <div className='app--title'>
           Bluck
         </div>
-        <div className='sidebar--btn'>
+        <div className='sidebar--btn' onClick={() => setSidebarContext(!sidebarContext)}>
           X
         </div>
       </div>
