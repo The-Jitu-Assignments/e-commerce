@@ -44,7 +44,12 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
       <div className='sidebar--header'>
-        Bluck
+        <div className='app--title'>
+          Bluck
+        </div>
+        <div className='sidebar--btn'>
+          X
+        </div>
       </div>
       <div className='sidebar--profile'>
         <div className='profile--intro'>
