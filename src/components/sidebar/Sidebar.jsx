@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './sidebar.css';
 import { BiHomeSmile, BiShoppingBag, BiLogOutCircle } from 'react-icons/bi';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../features/user/UserSlice';
 import { SidebarContext } from '../../context/SidebarContext';
 import { SiAboutdotme } from 'react-icons/si'
@@ -33,6 +33,7 @@ const iconData = [
 ]
 
 const Sidebar = () => {
+  const { user } = useSelector(state => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [sidebarContext, setSidebarContext] = React.useContext(SidebarContext);
@@ -53,13 +54,13 @@ const Sidebar = () => {
       </div>
       <div className='sidebar--profile'>
         <div className='profile--intro'>
-          Welcome Back...
+          Welcome Back,
         </div>
         <div>
-          John Katua
+          {user.name || 'Default user'}
         </div>
         <div className='profile--email'>
-          johnkatua99@gmail.com
+          {user.email || 'You do not have any email'}
         </div>
       </div>
       <div className='sidebar--links'>
