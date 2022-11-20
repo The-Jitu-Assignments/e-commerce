@@ -81,3 +81,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.cart--item__count {
+  color: rgba(46, 37, 37, 0.72);
+}

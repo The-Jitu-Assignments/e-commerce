@@ -19,9 +19,7 @@
 .cart--item__container {
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
   padding: 20px;
   height: calc(100% - 50px);
-  /* height: calc(100% - 50px); */
   overflow-y: scroll;
 }

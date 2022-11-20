@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { increaseItemQuantity } from '../../../features/products/productSlice';
+import { decreaseItemQuantity, increaseItemQuantity } from '../../../features/products/productSlice';
 
 const CartCard = () => {
   const dispatch = useDispatch();
@@ -20,6 +20,9 @@ const CartCard = () => {
             <div>
               {item.name}
             </div>
+            <div className='cart--item__count'>
+              Quantity: {item.count}
+            </div>
             <div>
               Ksh. {item.price}
             </div>
@@ -31,7 +34,7 @@ const CartCard = () => {
             <div>
               <AiOutlineDelete />
             </div>
-            <div>
+            <div onClick={() => dispatch(decreaseItemQuantity(item.id))}>
               <BiDownArrow />
             </div>
           </div>
