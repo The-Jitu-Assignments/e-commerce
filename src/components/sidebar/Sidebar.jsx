@@ -2,8 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './sidebar.css';
 import { BiHomeSmile, BiShoppingBag, BiLogOutCircle } from 'react-icons/bi';
-import { GrContact } from 'react-icons/gr';
-import { FcAbout } from 'react-icons/fc';
 import { useDispatch } from 'react-redux';
 import { login } from '../../features/user/UserSlice';
 import { SidebarContext } from '../../context/SidebarContext';
