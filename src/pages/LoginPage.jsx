@@ -6,8 +6,8 @@ import './pages.css';
 
 const LoginPage = () => {
   const [user, setUser] = useState({
-    email: '',
-    password: ''
+    name: '',
+    email: ''
   });
 
   const handleChange = (e) => {
@@ -34,20 +34,20 @@ const LoginPage = () => {
         <div className='login--data'>
           <label>Email:</label>
           <input 
-            type="email" 
+            type="text" 
             placeholder='enter your name' 
-            name='email'
-            value={user.email}
+            name='name'
+            value={user.name}
             onChange={handleChange}
           />
         </div>
         <div className='login--data'>
           <label>Password:</label>
           <input 
-            type="password" 
-            placeholder='enter your password' 
-            name='password'
-            value={user.password}
+            type="email" 
+            placeholder='enter your email address' 
+            name='email'
+            value={user.email}
             onChange={handleChange}
           />
         </div>
