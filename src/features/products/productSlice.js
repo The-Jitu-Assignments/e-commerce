@@ -68,6 +68,10 @@ export const productSlice = createSlice({
         return product
       })
       state.cart = updatedCart
+    },
+    removeItemFromCart: (state, action) => {
+      let newArray = state.cart.filter((item) => item.id === action.payload);
+      state.cart = newArray
     }
   },
   extraReducers(builder) {
