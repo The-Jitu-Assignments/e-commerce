@@ -20,3 +20,14 @@
 .layout--right__bottom {
   height: calc(100vh - 50px);
 }
+
+@media screen and (max-width: 768px) {
+  .layout--left {
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .layout--right {
+    width: 0;
+  }
+}

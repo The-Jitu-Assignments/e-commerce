@@ -6,6 +6,7 @@ import { GrContact } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { useDispatch } from 'react-redux';
 import { login } from '../../features/user/UserSlice';
+import { SidebarContext } from '../../context/SidebarContext';
 
 
 const iconData = [
@@ -33,7 +34,13 @@ const iconData = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const [sidebarContext, setSidebarContext] = React.useContext(SidebarContext);
+
+  const handleNavigate = (path) => {
+    navigate(path)
+    setSidebarContext(!sidebarContext)
+  }
   return (
     <div className='sidebar'>
       <div className='sidebar--header'>
@@ -55,7 +62,7 @@ const Sidebar = () => {
         <div className='sidebar--links__item'>
           <ul>
             {iconData.map((item, i) => (
-              <li key={i} onClick={() => navigate(item.path)}>
+              <li key={i} onClick={() => handleNavigate(item.path)}>
                 <span className='sidebar--icons'>
                   {item.icon}
                 </span>
