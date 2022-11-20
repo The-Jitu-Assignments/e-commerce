@@ -26,11 +26,6 @@ const iconData = [
     icon: <GrContact />,
     name: 'Contact Us',
     path: '/contact'
-  },
-  {
-    icon: <BiLogOutCircle />,
-    name: 'Logout',
-    path: '/logout'
   }
 ]
 
@@ -66,6 +61,14 @@ const Sidebar = () => {
                 </span>
               </li>
             ))}
+            <li>
+              <span className='sidebar--icons'>
+                <BiLogOutCircle />
+              </span>
+              <span>
+                Logout
+              </span>
+            </li>
           </ul>
         </div>
       </div>

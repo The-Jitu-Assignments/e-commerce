@@ -9,7 +9,7 @@ const CartCard = () => {
   const { cart } = useSelector(state => state.product);
 
   const handleRemove = (data, id) => {
-    if (data.count < 1) {
+    if (data.count <= 1) {
       dispatch(removeItemFromCart(id))
     }
     dispatch(decreaseItemQuantity(id))
