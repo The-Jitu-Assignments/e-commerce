@@ -17,3 +17,8 @@
 .contact--details {
   font-size: 20px;
 }
+
+.contact--icons {
+  display: flex;
+  gap: 20px;
+}
