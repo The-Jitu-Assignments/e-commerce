@@ -33,7 +33,7 @@ const iconData = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   return (
     <div className='sidebar'>
       <div className='sidebar--header'>

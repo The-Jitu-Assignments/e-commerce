@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import { SidebarContext } from '../../context/SidebarContext';
 import Header from '../header/Header';
 import Sidebar from '../sidebar/Sidebar';
 import './layout.css';
 
 const Layout = ({ children }) => {
   const { user } = useSelector(state => state.user);
+  const [ sidebarContext ] = useContext(SidebarContext);
   if (!user) {
     return <Navigate to={"/login"} />
   }
   return (
     <div className='layout'>
+      {sidebarContext && (
       <div className='layout--left'>
         <Sidebar />
       </div>
+      )}
       <div className='layout--right'>
         <div className='layout--right__top'> 
           <Header />
