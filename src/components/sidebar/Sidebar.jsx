@@ -4,6 +4,8 @@ import './sidebar.css';
 import { BiHomeSmile, BiShoppingBag, BiLogOutCircle } from 'react-icons/bi';
 import { GrContact } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
+import { useDispatch } from 'react-redux';
+import { login } from '../../features/user/UserSlice';
 
 
 const iconData = [
@@ -31,6 +33,7 @@ const iconData = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className='sidebar'>
       <div className='sidebar--header'>
@@ -61,7 +64,7 @@ const Sidebar = () => {
                 </span>
               </li>
             ))}
-            <li>
+            <li onClick={() => dispatch(login(false))}>
               <span className='sidebar--icons'>
                 <BiLogOutCircle />
               </span>
