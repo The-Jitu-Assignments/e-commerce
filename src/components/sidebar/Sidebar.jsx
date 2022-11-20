@@ -7,6 +7,8 @@ import { FcAbout } from 'react-icons/fc';
 import { useDispatch } from 'react-redux';
 import { login } from '../../features/user/UserSlice';
 import { SidebarContext } from '../../context/SidebarContext';
+import { SiAboutdotme } from 'react-icons/si'
+import { MdOutlineContactless } from 'react-icons/md'
 
 
 const iconData = [
@@ -21,12 +23,12 @@ const iconData = [
     path: '/products'
   },
   {
-    icon: <FcAbout />,
+    icon: <SiAboutdotme />,
     name: 'About',
     path: '/about'
   },
   {
-    icon: <GrContact />,
+    icon: <MdOutlineContactless />,
     name: 'Contact Us',
     path: '/contact'
   }
