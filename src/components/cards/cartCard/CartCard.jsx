@@ -7,7 +7,14 @@ import { decreaseItemQuantity, increaseItemQuantity, removeItemFromCart } from '
 const CartCard = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector(state => state.product);
-  console.log(cart);
+
+  const handleRemove = (data, id) => {
+    if (data.count < 1) {
+      dispatch(removeItemFromCart(id))
+    }
+    dispatch(decreaseItemQuantity(id))
+  }
+
   if (!cart.length) return 'Your cart is empty';
   return (
     <>
@@ -34,7 +41,7 @@ const CartCard = () => {
             <div onClick={() => dispatch(removeItemFromCart(item.id))}>
               <AiOutlineDelete />
             </div>
-            <div onClick={() => dispatch(decreaseItemQuantity(item.id))}>
+            <div onClick={() => handleRemove(item, item.id)}>
               <BiDownArrow />
             </div>
           </div>
