@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { validateProductSchema } from "../../helpers/validation";
+import { toast } from "react-toastify";
 
 const url = 'https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/react-grid-dashboard.json';
 
@@ -37,7 +38,7 @@ export const createProduct = createAsyncThunk('product/createProduct',
       const res = await axios.post(url, values);
       dispatch(fetchProducts())
     } catch (error) {
-      console.log(error)
+      toast.error(error.message);
     }
   }
 );
