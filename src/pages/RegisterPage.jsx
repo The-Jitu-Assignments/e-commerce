@@ -18,10 +18,6 @@ const RegisterPage = () => {
   }
   const navigate = useNavigate()
   const dispatch = useDispatch();
-  // const handleRegister = () => {
-  //   dispatch(register(true));
-  //   navigate('/')
-  // };
 
   const handleSubmit = () => {
     dispatch(register(user));
