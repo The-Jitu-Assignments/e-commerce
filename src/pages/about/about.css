@@ -48,4 +48,9 @@
   .about--image {
     display: none;
   }
+
+  .about--details {
+    flex: 1;
+    border-radius: 10px;
+  }
 }
