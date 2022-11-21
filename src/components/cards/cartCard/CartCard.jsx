@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -16,7 +16,8 @@ const CartCard = () => {
   }
 
   if (!cart.length) return 'Your cart is empty';
-  return (
+
+  const cartItem = useMemo(() => (
     <>
       {cart.map((item) => (
         <div key={item.id} className='cart--card'>
@@ -47,6 +48,11 @@ const CartCard = () => {
           </div>
         </div>
       ))}
+    </>
+  ), [cart])
+  return (
+    <>
+      {cartItem}
     </>
   )
 }
