@@ -6,7 +6,6 @@ import '../cards.css';
 const ProductCard = ({ data, id }) => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
-  console.log('cart', cart);
   return (
     <div className='product--card'>
       <div className='product--card__top'>
