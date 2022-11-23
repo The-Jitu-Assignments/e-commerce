@@ -45,6 +45,9 @@ export const cartSlice = createSlice({
   extraReducers (builder) {
     builder.addCase(addToCart.fulfilled, (state, action) => {
       console.log(action)
+    });
+    builder.addCase(fetchItems.fulfilled, (state, action) => {
+      state.cart = action.payload;
     })
   }
 });
