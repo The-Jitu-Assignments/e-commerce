@@ -17,7 +17,7 @@ export const fetchItems = createAsyncThunk('cart/fetchItems',
         id: key,
         productId: data[key].id,
         name: data[key].name,
-        imageUrl: data[key].image,
+        image: data[key].image,
         price: data[key].price,
         count: data[key].count
       })
@@ -41,8 +41,18 @@ export const increaseItemQuantity = createAsyncThunk('cart/increaseItemQuantity'
   async ({id, value}, { dispatch }) => {
     try {
       const res = await axios.put(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`, value);
-      console.log(res);
-      return { id: id, value: value };
+      return { id: id, value: res.data };
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const decreaseItemQuantity = createAsyncThunk('cart/decreaseItemQuantity',
+  async ({ id, value }, { dispatch }) => {
+    try {
+      const res = await axios.put(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`, value);
+      return { id: id, value: res.data }
     } catch (error) {
       console.log(error);
     }
@@ -72,6 +82,15 @@ export const cartSlice = createSlice({
       state.cart = action.payload;
     });
     builder.addCase(increaseItemQuantity.fulfilled, (state, action) => {
+      state.cart = state.cart.map((product) => {
+        if (product.id === action.payload.id) {
+          return action.payload.value
+        } else {
+          return product
+        }
+      })
+    });
+    builder.addCase(decreaseItemQuantity.fulfilled, (state, action) => {
       state.cart = state.cart.map((product) => {
         if (product.id === action.payload.id) {
           return action.payload.value

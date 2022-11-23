@@ -8,6 +8,7 @@ import { removeItemFromCart, increaseItemQuantity } from '../../../features/cart
 const CartCard = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector(state => state.cart);
+  console.log(cart);
 
   const handleRemove = (data, id) => {
     if (data.count <= 1) {
@@ -19,9 +20,9 @@ const CartCard = () => {
   const cartItem = useMemo(() => (
     <>
       {cart.map((item) => (
-        <div key={item.id} className='cart--card'>
+        <div key={item.productId} className='cart--card'>
           <div className='cart--card__img'>
-            <img src={item.imageUrl} alt="cart-item" />
+            <img src={item.image} alt="cart-item" />
           </div>
           <div className='cart--card__details'>
             <div>
@@ -35,7 +36,14 @@ const CartCard = () => {
             </div>
           </div>
           <div className='cart--card__icons'>
-            <div onClick={() => dispatch(increaseItemQuantity({id: item.id, value: item.count + 1}))}>
+            <div onClick={() => dispatch(increaseItemQuantity({id: item.id, value: {
+              ...item,
+              // name: item.name,
+              count: item.count + 1,
+              // id: item.id,
+              // imageUrl: item.imageUrl,
+              // price: item.price
+            }}))}>
               <BiUpArrow />
             </div>
             <div onClick={() => dispatch(removeItemFromCart(item.id))}>
