@@ -16,8 +16,6 @@ const CartCard = () => {
     dispatch(decreaseItemQuantity(id))
   }
 
-  // if (!cart.length) return 'Your cart is empty';
-
   const cartItem = useMemo(() => (
     <>
       {cart.map((item) => (
