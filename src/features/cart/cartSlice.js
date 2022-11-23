@@ -27,10 +27,10 @@ export const fetchItems = createAsyncThunk('cart/fetchItems',
 )
 
 export const addToCart = createAsyncThunk('cart/addToCart',
-  async (values) => {
+  async (values, { dispatch }) => {
     try {
       const res = await axios.post(url, values);
-      console.log(res)
+      dispatch(fetchItems());
     } catch (error) {
       console.log(error)
     }
