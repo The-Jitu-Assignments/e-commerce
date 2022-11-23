@@ -1,17 +1,23 @@
-import React, { useContext } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useContext, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { SidebarContext } from '../../context/SidebarContext';
+import { fetchItems } from '../../features/cart/cartSlice';
 import Header from '../header/Header';
 import Sidebar from '../sidebar/Sidebar';
 import './layout.css';
 
 const Layout = ({ children }) => {
+  const dispatch = useDispatch();
   const { user } = useSelector(state => state.user);
   const [ sidebarContext ] = useContext(SidebarContext);
   if (!user) {
     return <Navigate to={"/login"} />
   }
+
+  useEffect(() => {
+    dispatch(fetchItems())
+  }, []);
   return (
     <div className='layout'>
       {sidebarContext && (
