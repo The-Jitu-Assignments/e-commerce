@@ -17,6 +17,8 @@ const Header = () => {
   const [open, setIsOpen] = useState(false)
   const { cart } = useSelector((state) => state.cart);
 
+  const totalProducts = cart.reduce((total, product) => total + product.count, 0);
+
   return (
     <div className='header'>
       <div onClick={() => setSidebarContext(!sidebarContext)}>
@@ -25,7 +27,7 @@ const Header = () => {
       <div className='header--cart' onClick={() => setIsOpen(true)}>
         <BsCart size={"1.5em"}  style={iconStyles} />
         <span className='cart--count'>
-          {cart.length}
+          {totalProducts}
         </span>
       </div>
       <CartOverlay open={open} onClose={() => setIsOpen(false)} />
