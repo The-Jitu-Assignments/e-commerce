@@ -17,7 +17,7 @@ export const fetchItems = createAsyncThunk('cart/fetchItems',
         id: key,
         productId: data[key].id,
         name: data[key].name,
-        image: data[key].imageUrl,
+        imageUrl: data[key].image,
         price: data[key].price,
         count: data[key].count
       })
