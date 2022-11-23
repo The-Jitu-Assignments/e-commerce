@@ -28,7 +28,6 @@ export const fetchItems = createAsyncThunk('cart/fetchItems',
 
 export const addToCart = createAsyncThunk('cart/addToCart',
   async (values) => {
-    console.log(values)
     try {
       const res = await axios.post(url, values);
       console.log(res)

@@ -15,7 +15,7 @@ const iconStyles = {
 const Header = () => {
   const [sidebarContext, setSidebarContext] = useContext(SidebarContext);
   const [open, setIsOpen] = useState(false)
-  const { cart } = useSelector((state) => state.product);
+  const { cart } = useSelector((state) => state.cart);
 
   return (
     <div className='header'>
