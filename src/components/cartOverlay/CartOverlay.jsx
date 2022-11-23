@@ -4,9 +4,7 @@ import './cart.css';
 import { useSelector } from 'react-redux';
 
 const CartOverlay = ({ open, onClose }) => {
-  // const { cart } = useSelector((state) => state.product)
   const { cart } = useSelector(state => state.cart);
-  console.log(cart)
   if (!open) return;
 
   const totalProducts = cart.reduce((total, item) => total + item.count, 0);
