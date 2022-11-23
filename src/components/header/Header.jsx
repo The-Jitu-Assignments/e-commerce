@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BsCart } from 'react-icons/bs';
-import { TfiLayoutMenuV } from 'react-icons/tfi';
 import { MdOutlineMenuOpen } from 'react-icons/md'
 import './header.css'
 import CartOverlay from '../cartOverlay/CartOverlay';
