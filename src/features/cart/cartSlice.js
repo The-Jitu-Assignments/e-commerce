@@ -5,7 +5,26 @@ const url = 'https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart
 
 const initialState = {
   cart: []
-}
+};
+
+export const fetchItems = createAsyncThunk('cart/fetchItems',
+  async () => {
+    const res = await axios.get(url);
+    let cartData = [];
+    let data = res.data;
+    for (let key in data) {
+      cartData.push({
+        id: key,
+        productId: data[key].id,
+        name: data[key].name,
+        image: data[key].imageUrl,
+        price: data[key].price,
+        count: data[key].count
+      })
+    }
+    return cartData;
+  }
+)
 
 export const addToCart = createAsyncThunk('cart/addToCart',
   async (values) => {
