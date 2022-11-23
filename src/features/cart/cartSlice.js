@@ -41,7 +41,7 @@ export const removeItemFromCart = createAsyncThunk('cart/removeItemFromCart',
   async (id) => {
     try {
       const res = await axios.delete(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`)
-      console.log(res)
+      console.log(res)      
     } catch (error) {
       console.log(error)
     }

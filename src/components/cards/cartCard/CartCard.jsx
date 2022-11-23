@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { decreaseItemQuantity, increaseItemQuantity, removeItemFromCart } from '../../../features/products/productSlice';
+import { decreaseItemQuantity, increaseItemQuantity } from '../../../features/products/productSlice';
+import { removeItemFromCart } from '../../../features/cart/cartSlice';
 
 const CartCard = () => {
   const dispatch = useDispatch();
