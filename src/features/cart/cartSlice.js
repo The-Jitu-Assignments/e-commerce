@@ -9,11 +9,12 @@ const initialState = {
 
 export const addToCart = createAsyncThunk('cart/addToCart',
   async (values) => {
+    console.log(values)
     try {
       const res = await axios.post(url, values);
       console.log(res)
     } catch (error) {
-      console.log(res)
+      console.log(error)
     }
   }
 )
@@ -28,7 +29,5 @@ export const cartSlice = createSlice({
     })
   }
 });
-
-export const { addToCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

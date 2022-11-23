@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import Modal from '../../components/modal/Modal';
 import './products.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, fetchProducts } from '../../features/products/productSlice';
+import { fetchProducts } from '../../features/products/productSlice';
+import { addToCart } from '../../features/cart/cartSlice';
 import ProductCard from '../../components/cards/productCard/ProductCard';
 
 const Products = () => {
