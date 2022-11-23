@@ -22,7 +22,13 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {},
-  extraReducers: {}
+  extraReducers (builder) {
+    builder.addCase(addToCart.fulfilled, (state, action) => {
+      console.log(action)
+    })
+  }
 });
+
+export const { addToCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
