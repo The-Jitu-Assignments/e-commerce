@@ -38,10 +38,10 @@ export const addToCart = createAsyncThunk('cart/addToCart',
 )
 
 export const removeItemFromCart = createAsyncThunk('cart/removeItemFromCart',
-  async (id) => {
+  async (id, { dispatch }) => {
     try {
-      const res = await axios.delete(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`)
-      console.log(res)      
+      await axios.delete(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`);
+      dispatch(fetchItems());     
     } catch (error) {
       console.log(error)
     }

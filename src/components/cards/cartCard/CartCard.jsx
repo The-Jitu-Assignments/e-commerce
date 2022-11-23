@@ -16,7 +16,7 @@ const CartCard = () => {
     dispatch(decreaseItemQuantity(id))
   }
 
-  if (!cart.length) return 'Your cart is empty';
+  // if (!cart.length) return 'Your cart is empty';
 
   const cartItem = useMemo(() => (
     <>
@@ -50,10 +50,11 @@ const CartCard = () => {
         </div>
       ))}
     </>
-  ), [cart])
+  ), [cart]);
+
   return (
     <>
-      {cartItem}
+      {cart.length ? cartItem : 'Your cart is empty'}
     </>
   )
 }
