@@ -35,6 +35,17 @@ export const addToCart = createAsyncThunk('cart/addToCart',
       console.log(error)
     }
   }
+);
+
+export const increaseItemQuantity = createAsyncThunk('cart/increaseItemQuantity',
+  async ({id, values}, { dispatch }) => {
+    try {
+      const res = await axios.put(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`, values);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 )
 
 export const removeItemFromCart = createAsyncThunk('cart/removeItemFromCart',
@@ -59,6 +70,7 @@ export const cartSlice = createSlice({
     builder.addCase(fetchItems.fulfilled, (state, action) => {
       state.cart = action.payload;
     })
+    
   }
 });
 
