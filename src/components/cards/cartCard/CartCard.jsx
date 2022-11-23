@@ -38,11 +38,7 @@ const CartCard = () => {
           <div className='cart--card__icons'>
             <div onClick={() => dispatch(increaseItemQuantity({id: item.id, value: {
               ...item,
-              // name: item.name,
               count: item.count + 1,
-              // id: item.id,
-              // imageUrl: item.imageUrl,
-              // price: item.price
             }}))}>
               <BiUpArrow />
             </div>
