@@ -5,7 +5,8 @@ import '../cards.css';
 
 const ProductCard = ({ data, id }) => {
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state.product);
+  const { cart } = useSelector((state) => state.cart);
+  console.log('cart', cart);
   return (
     <div className='product--card'>
       <div className='product--card__top'>
@@ -23,7 +24,7 @@ const ProductCard = ({ data, id }) => {
           <div className='product--rate'>
             {data.discount}%
           </div>
-          <button className='product--cart' onClick={() => dispatch(addToCart(data))} disabled={cart.some(cartItem => cartItem.id === id)}>
+          <button className='product--cart' onClick={() => dispatch(addToCart(data))} disabled={cart.some(cartItem => cartItem.productId === id)}>
             Add to Cart
           </button>
         </div>
