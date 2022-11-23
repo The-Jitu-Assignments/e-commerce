@@ -6,7 +6,7 @@ import { decreaseItemQuantity, increaseItemQuantity, removeItemFromCart } from '
 
 const CartCard = () => {
   const dispatch = useDispatch();
-  const { cart } = useSelector(state => state.product);
+  const { cart } = useSelector(state => state.cart);
 
   const handleRemove = (data, id) => {
     if (data.count <= 1) {
@@ -22,7 +22,7 @@ const CartCard = () => {
       {cart.map((item) => (
         <div key={item.id} className='cart--card'>
           <div className='cart--card__img'>
-            <img src={item.image} alt="cart-item" />
+            <img src={item.imageUrl} alt="cart-item" />
           </div>
           <div className='cart--card__details'>
             <div>
