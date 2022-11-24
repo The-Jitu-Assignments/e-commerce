@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { decreaseItemQuantity } from '../../../features/products/productSlice';
-import { removeItemFromCart, increaseItemQuantity } from '../../../features/cart/cartSlice';
+// import { decreaseItemQuantity } from '../../../features/products/productSlice';
+import { removeItemFromCart, increaseItemQuantity, decreaseItemQuantity } from '../../../features/cart/cartSlice';
 
 const CartCard = () => {
   const dispatch = useDispatch();
@@ -11,10 +11,16 @@ const CartCard = () => {
   console.log(cart);
 
   const handleRemove = (data, id) => {
+    console.log('data', data);
+    console.log('id', id);
     if (data.count <= 1) {
+      console.log('running')
       dispatch(removeItemFromCart(id))
     }
-    dispatch(decreaseItemQuantity(id))
+    dispatch(decreaseItemQuantity({ id: id, value: {
+      ...data,
+      count: data.count - 1
+    }}))
   }
 
   const cartItem = useMemo(() => (
