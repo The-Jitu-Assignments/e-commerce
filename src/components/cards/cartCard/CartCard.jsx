@@ -36,7 +36,7 @@ const CartCard = () => {
               Quantity: {item.count}
             </div>
             <div>
-              Ksh. {item.price}
+              Ksh. {item.price * item.count}
             </div>
           </div>
           <div className='cart--card__icons'>
