@@ -14,8 +14,8 @@ export const fetchItems = createAsyncThunk('cart/fetchItems',
     let data = res.data;
     for (let key in data) {
       cartData.push({
-        id: key,
-        productId: data[key].id,
+        cartId: key,
+        id: data[key].id,
         name: data[key].name,
         image: data[key].image,
         price: data[key].price,
@@ -41,6 +41,7 @@ export const increaseItemQuantity = createAsyncThunk('cart/increaseItemQuantity'
   async ({id, value}, { dispatch }) => {
     try {
       const res = await axios.put(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`, value);
+      dispatch(fetchItems());
       return { id: id, value: res.data };
     } catch (error) {
       console.log(error);
@@ -52,6 +53,7 @@ export const decreaseItemQuantity = createAsyncThunk('cart/decreaseItemQuantity'
   async ({ id, value }, { dispatch }) => {
     try {
       const res = await axios.put(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`, value);
+      dispatch(fetchItems());
       return { id: id, value: res.data }
     } catch (error) {
       console.log(error);
@@ -61,6 +63,7 @@ export const decreaseItemQuantity = createAsyncThunk('cart/decreaseItemQuantity'
 
 export const removeItemFromCart = createAsyncThunk('cart/removeItemFromCart',
   async (id, { dispatch }) => {
+    console.log(id);
     try {
       await axios.delete(`https://react-grid-dashboard-857a2-default-rtdb.firebaseio.com/cart/${id}.json`);
       dispatch(fetchItems());     

@@ -24,7 +24,7 @@ const ProductCard = ({ data, id }) => {
           <div className='product--rate'>
             {data.discount}%
           </div>
-          <button className='product--cart' onClick={() => dispatch(addToCart(data))} disabled={cart.some(cartItem => cartItem.productId === id)}>
+          <button className='product--cart' onClick={() => dispatch(addToCart(data))} disabled={cart.some(cartItem => cartItem.id === id)}>
             Add to Cart
           </button>
         </div>

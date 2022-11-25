@@ -10,15 +10,13 @@ const CartCard = () => {
   const { cart } = useSelector(state => state.cart);
   console.log(cart);
 
-  const handleRemove = (data, id) => {
-    console.log('data', data);
-    console.log('id', id);
-    if (data.count <= 1) {
-      console.log('running')
-      dispatch(removeItemFromCart(id))
-    }
-    dispatch(decreaseItemQuantity({ id: id, value: {
-      ...data,
+  const handleRemove = (data) => {
+    dispatch(decreaseItemQuantity({ id: data.cartId, value: {
+      cartId: data.cartId,
+      id: data.id,
+      name: data.name,
+      image: data.image,
+      price: data.price,
       count: data.count - 1
     }}))
   }
@@ -26,7 +24,7 @@ const CartCard = () => {
   const cartItem = useMemo(() => (
     <>
       {cart.map((item) => (
-        <div key={item.productId} className='cart--card'>
+        <div key={item.id} className='cart--card'>
           <div className='cart--card__img'>
             <img src={item.image} alt="cart-item" />
           </div>
@@ -42,18 +40,22 @@ const CartCard = () => {
             </div>
           </div>
           <div className='cart--card__icons'>
-            <div onClick={() => dispatch(increaseItemQuantity({id: item.id, value: {
-              ...item,
+            <button className='cart--card__btn' onClick={() => dispatch(increaseItemQuantity({id: item.cartId, value: {
+              cartId: item.cartId,
+              id: item.id,
+              name: item.name,
+              image: item.image,
+              price: item.price,
               count: item.count + 1,
             }}))}>
               <BiUpArrow />
-            </div>
-            <div onClick={() => dispatch(removeItemFromCart(item.id))}>
+            </button>
+            <button className='cart--card__btn' onClick={() => dispatch(removeItemFromCart(item.cartId))}>
               <AiOutlineDelete />
-            </div>
-            <div onClick={() => handleRemove(item, item.id)}>
+            </button>
+            <button className='cart--card__btn' onClick={() => handleRemove(item)} disabled={item.count === 1}>
               <BiDownArrow />
-            </div>
+            </button>
           </div>
         </div>
       ))}

@@ -92,3 +92,13 @@
 .cart--item__count {
   color: rgba(46, 37, 37, 0.72);
 }
+
+.cart--card__btn {
+  display: flex;
+  padding: 4px;
+  background-color: transparent;
+  border: 1px solid var(--darkBlue);
+  cursor: pointer;
+  border-radius: 4px;
+
+}
