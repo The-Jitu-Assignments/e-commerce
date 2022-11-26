@@ -7,7 +7,8 @@ const CartOverlay = ({ open, onClose }) => {
   const { cart } = useSelector(state => state.cart);
   if (!open) return;
 
-  const totalProducts = cart.reduce((total, item) => total + item.count, 0);
+  const totalProducts = cart.reduce((total, item) => total + item.price * item.count, 0);
+
 
   return (
     <div className='overlay' onClick={onClose}>
@@ -20,7 +21,7 @@ const CartOverlay = ({ open, onClose }) => {
           <CartCard />
         </div>
         <div className='cart--footer'>
-          Total Products to be order is: {totalProducts}
+          Your Total Price is : Ksh. {totalProducts}
         </div>
       </div>
     </div>
